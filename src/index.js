@@ -1,7 +1,5 @@
 import './style.css';
 import { geoIP } from "./geoIp";
- 
-
 import { validIP } from "./validIP.js";
 
 // const OPTIONS = {
@@ -30,8 +28,13 @@ $form.addEventListener('submit', function(event) {//Escuchamos el evento del sub
     console.log("Valor de la variable value: ",value); 
     if(!value)return 
     validIP(value);
-    if(validIP===true){geoIP(value,$submit)}
-    else{alert("Ip invalida");}
+    console.log(validIP);
+    if(validIP(value)===true){
+      geoIP(value,$submit)
+    }
+    else{
+      alert("Ip invalida");
+    }
 
   //   var patronIp = new RegExp("^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3})$");//expresion regular para determinar numeros entre 0 y 0 en octectos con hasta 3 datos
   //   var valores;

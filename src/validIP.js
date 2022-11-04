@@ -1,6 +1,5 @@
 
-
-export function validIP(value,$submit){
+export function validIP(value){
     var patronIp = new RegExp("^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3})$");//expresion regular para determinar numeros entre 0 y 0 en octectos con hasta 3 datos
     var valores;
     if(value.search(patronIp) !== 0) {//El método search() ejecuta una búsqueda que encaje entre una expresión regular y el objeto String desde el que se llama
@@ -17,7 +16,7 @@ export function validIP(value,$submit){
     //   console.log(valores)
       if(((0 <= valores[0] <= 255) && (0 <=valores[1] <= 255) && (0 <=valores[2] <= 255) && (0 <= valores[3] <= 255))===true){//Validamos que cada valor de valores[i] tenga un valor entre 0 y 255 (aun tiene fallas)
         // console.log("Es verdadero");
-        return true
+        return true;
         // return geoIP(value,$submit);//De cumplorse mandamos a llamar la funcion geoIP pero le pasamos el valor de value que es un string
     }
    }
